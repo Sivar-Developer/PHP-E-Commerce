@@ -16,6 +16,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
 <body>
+
     <!-- Top Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">E-Commerce</a>
@@ -46,7 +47,26 @@
     <div id="headerWrapper">
         <div id="back-flower"></div>
         <div id="logotext"></div>
-        <div id="for-flower"></div>
+        <div id="fore-flower"></div>
     </div>
+
+    <script>
+        jQuery(window).scroll(function() {
+            var vscroll = jQuery(this).scrollTop();
+            jQuery('#logotext').css({
+                "transform": "translate(0px, " + vscroll/2 + "px)"
+            });
+
+            var vscroll = jQuery(this).scrollTop();
+            jQuery('#back-flower').css({
+                "transform": "translate(" + vscroll/5 + "px, -" + vscroll/12 + "px)"
+            });
+
+            var vscroll = jQuery(this).scrollTop();
+            jQuery('#fore-flower').css({
+                "transform": "translate(0px, -" + vscroll/2 + "px)"
+            });
+        });
+    </script>
 </body>
 </html>
